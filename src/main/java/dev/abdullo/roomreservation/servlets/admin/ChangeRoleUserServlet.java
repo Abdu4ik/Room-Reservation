@@ -22,7 +22,7 @@ public class ChangeRoleUserServlet extends HttpServlet {
         String role = request.getParameter("role");
 
         AdminService.getInstance().changeRole(id, role);
-        response.sendRedirect("tafakkooradmin");
+        response.sendRedirect("/tafakkooradmin");
 
     }
 }

@@ -17,6 +17,6 @@ public class UserDeleteServlet extends HttpServlet {
 
         Integer userId = Integer.valueOf(request.getParameter("id"));
         AdminService.getInstance().changeDeleted(userId, true);
-        response.sendRedirect("tafakkooradmin");
+        response.sendRedirect("/tafakkooradmin");
     }
 }

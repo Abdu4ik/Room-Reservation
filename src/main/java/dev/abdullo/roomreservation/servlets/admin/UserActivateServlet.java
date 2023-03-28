@@ -17,6 +17,6 @@ public class UserActivateServlet extends HttpServlet {
 
         Integer userId = Integer.valueOf(request.getParameter("id"));
         AdminService.getInstance().changeDeleted(userId, false);
-        response.sendRedirect("tafakkooradmin");
+        response.sendRedirect("/tafakkooradmin");
     }
 }

@@ -21,7 +21,7 @@ public class UserService {
     public static final int hours = 3600;
     public static final int oneDay = 86400;
     public static final String USER_PAGE = "/user";
-    public static final String ADMIN_PAGE = "tafakkooradmin";
+    public static final String ADMIN_PAGE = "/tafakkooradmin";
 
     public static UserService getInstance() {
         return instance.get();

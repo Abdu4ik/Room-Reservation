@@ -41,7 +41,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="tafakkooradmin"><i><u>All users</u></i></a>
+                <a class="nav-link" href="/tafakkooradmin"><i><u>All users</u></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/tafakkooradmin/all">All Reservations</a>
