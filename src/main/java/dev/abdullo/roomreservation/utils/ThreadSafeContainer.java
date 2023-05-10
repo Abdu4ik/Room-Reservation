@@ -12,7 +12,4 @@ import java.util.concurrent.ConcurrentMap;
 
 public interface ThreadSafeContainer {
     ConcurrentMap<Long, LocalDate> reservationDates = new ConcurrentHashMap<>();
-//    List<Room> rooms = RoomDAO.getInstance().findAll();
-//    List<Room> threadSafe = Collections.synchronizedList(rooms);
-
 }

@@ -8,7 +8,6 @@ public class Util {
         char capitalFirstLetter = Character.toUpperCase(firstLetter);
         return capitalFirstLetter + inputString.substring(1);
     }
-
     public static Util getInstance() {
         return instance.get();
     }

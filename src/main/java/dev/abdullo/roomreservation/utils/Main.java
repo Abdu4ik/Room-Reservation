@@ -1,24 +1,6 @@
 package dev.abdullo.roomreservation.utils;
 
-import dev.abdullo.roomreservation.dao.FieldDAO;
-import dev.abdullo.roomreservation.dao.ReservationDAO;
-import dev.abdullo.roomreservation.dao.RoomDAO;
-import dev.abdullo.roomreservation.dao.UserDAO;
-import dev.abdullo.roomreservation.domains.Reservation;
-import dev.abdullo.roomreservation.domains.Room;
-import dev.abdullo.roomreservation.domains.User;
-import dev.abdullo.roomreservation.utils.gmail.EmailService;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
