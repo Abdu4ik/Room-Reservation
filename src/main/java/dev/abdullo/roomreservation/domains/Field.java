@@ -1,16 +1,16 @@
 package dev.abdullo.roomreservation.domains;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
+@Getter
+@Setter
+@ToString
 public class Field implements BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

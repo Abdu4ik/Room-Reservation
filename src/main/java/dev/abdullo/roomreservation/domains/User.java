@@ -3,10 +3,7 @@ package dev.abdullo.roomreservation.domains;
 import dev.abdullo.roomreservation.enums.Roles;
 import dev.abdullo.roomreservation.enums.Status;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -15,7 +12,9 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 @Builder
 public class User implements BaseEntity {
     @Id

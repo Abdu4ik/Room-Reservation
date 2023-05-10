@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@SuppressWarnings("unchecked")
 public class ReservationDAO extends BaseDAO<Reservation, Long> {
     private static final ThreadLocal<ReservationDAO> RESERVATION_DAO_THREAD_LOCAL = ThreadLocal.withInitial(ReservationDAO::new);
 

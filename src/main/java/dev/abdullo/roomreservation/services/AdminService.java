@@ -16,21 +16,18 @@ public class AdminService {
     }
 
     public List<User> usersList(Long adminId) {
-        List<User> users = UserDAO.getInstance().getPage(adminId);
-        return users;
+        return UserDAO.getInstance().getPage(adminId);
     }
 
 
     public boolean changeRole(Integer id, String role) {
         //todo check role is valid
-        boolean result = UserDAO.getInstance().changeRole(id, role);
-        return result;
+        return UserDAO.getInstance().changeRole(id, role);
     }
 
     public boolean changeDeleted(Integer userId, boolean deleted) {
 
         //todo check userId  is valid
-        boolean result = UserDAO.getInstance().changeDeleted(Long.valueOf(userId), deleted);
-        return result;
+        return UserDAO.getInstance().changeDeleted(Long.valueOf(userId), deleted);
     }
 }

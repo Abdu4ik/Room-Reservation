@@ -16,8 +16,8 @@ import java.io.IOException;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UserService {
     public static final ThreadLocal<UserService> instance = ThreadLocal.withInitial(UserService::new);
-    public static final int minutes = 60;
-    public static final int hours = 3600;
+//    public static final int minutes = 60;
+//    public static final int hours = 3600;
     public static final int oneDay = 86400;
     public static final String USER_PAGE = "/user";
     public static final String ADMIN_PAGE = "/tafakkooradmin";
@@ -112,13 +112,10 @@ public class UserService {
 
     public static String redirectByRole(User user) {
         Roles role = user.getRole();
-        switch (role) {
-            case ADMIN:
-                return ADMIN_PAGE;
-            case USER:
-                return USER_PAGE;
-            default:
-                return "/";
-        }
+        return switch (role) {
+            case ADMIN -> ADMIN_PAGE;
+            case USER -> USER_PAGE;
+            default -> "/";
+        };
     }
 }
