@@ -1,7 +1,10 @@
 package dev.abdullo.roomreservation.dao;
 
 import dev.abdullo.roomreservation.domains.BaseEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -9,7 +12,7 @@ import java.util.List;
 
 public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
     protected final EntityManagerFactory emf;
-//    protected EntityManager em;
+    //    protected EntityManager em;
     private final Class<T> persistenceClass;
 
     protected BaseDAO() {
@@ -24,8 +27,8 @@ public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
     }
 
 
-    public T save( T t ) {
-        try (EntityManager em = emf.createEntityManager()){
+    public T save(T t) {
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.persist(t);
             em.getTransaction().commit();
@@ -33,19 +36,19 @@ public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
         return t;
     }
 
-    public T findById(ID id ) {
+    public T findById(ID id) {
         T t = null;
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             t = em.find(persistenceClass, id);
             em.getTransaction().commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return t;
     }
 
-    public boolean update( T t ) {
+    public boolean update(T t) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.merge(t);
@@ -54,7 +57,7 @@ public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
         return true;
     }
 
-    public boolean delete( T t ) {
+    public boolean delete(T t) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.remove(t);
@@ -63,7 +66,7 @@ public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
         return true;
     }
 
-    public boolean deleteById( ID id ) {
+    public boolean deleteById(ID id) {
         boolean delete;
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
@@ -99,8 +102,6 @@ public abstract class BaseDAO<T extends BaseEntity, ID extends Serializable> {
         }
         return list;
     }
-
-
 
 
 //    protected void begin() {

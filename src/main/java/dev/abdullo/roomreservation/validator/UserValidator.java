@@ -1,8 +1,8 @@
 package dev.abdullo.roomreservation.validator;
 
+import dev.abdullo.roomreservation.dao.UserDAO;
 import dev.abdullo.roomreservation.domains.User;
 import jakarta.servlet.http.HttpServletRequest;
-import dev.abdullo.roomreservation.dao.UserDAO;
 
 import java.util.HashMap;
 import java.util.List;

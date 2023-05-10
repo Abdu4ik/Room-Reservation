@@ -2,10 +2,10 @@ package dev.abdullo.roomreservation.servlets.user;
 
 import dev.abdullo.roomreservation.dao.FieldDAO;
 import dev.abdullo.roomreservation.domains.Field;
+import dev.abdullo.roomreservation.domains.User;
 import dev.abdullo.roomreservation.services.UserService;
 import dev.abdullo.roomreservation.utils.Util;
 import dev.abdullo.roomreservation.validator.UserValidator;
-import dev.abdullo.roomreservation.domains.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -74,7 +74,7 @@ public class ProfileServlet extends HttpServlet {
         if (errors.isEmpty()) {
             userService.update(user);
             response.sendRedirect("/profile");
-        } else{
+        } else {
             UserValidator.setErrorAttributes(request, errors);
             request.getRequestDispatcher("/views/user/account-setting/profile.jsp").forward(request, response);
         }

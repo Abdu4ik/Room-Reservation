@@ -39,9 +39,10 @@ public class RoomDAO extends BaseDAO<Room, Long> {
         }
         return availableRoomsAndSeats;
     }
-    public List<Room> getRoomsByField(Field field){
+
+    public List<Room> getRoomsByField(Field field) {
         List<Room> rooms = null;
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             rooms = em.createQuery("select r from Room r where r.field = :field", Room.class)
                     .setParameter("field", field)
@@ -51,10 +52,10 @@ public class RoomDAO extends BaseDAO<Room, Long> {
         return rooms;
     }
 
-    public List<String> getReservedSeatsOnDate(LocalDate reservationDate, Room room){
+    public List<String> getReservedSeatsOnDate(LocalDate reservationDate, Room room) {
         List<Integer> reservedSeats = null;
         List<String> seats = new ArrayList<>();
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             reservedSeats = em.createQuery("select r.seatNumber from Reservation r where r.room = :room and r.reservationDate = :reservationDate and not isExpired", Integer.class)
                     .setParameter("room", room)

@@ -22,7 +22,7 @@ public class DatePickerFilter implements Filter {
 
             if (startDate != null) {
                 reservationDate = parseDate(startDate);
-            }else {
+            } else {
                 req.setAttribute("date_error", "Choose a date");
                 req.getRequestDispatcher("/views/user/booking/datepicker.jsp").forward(req, res);
             }
@@ -39,6 +39,7 @@ public class DatePickerFilter implements Filter {
     public static int getDifferenceBetweenDates(LocalDate startDate, LocalDate endDate) {
         return endDate.compareTo(startDate);
     }
+
     public static LocalDate parseDate(String date) {
         return LocalDate.parse(date);
     }

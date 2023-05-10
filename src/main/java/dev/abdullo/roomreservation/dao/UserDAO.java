@@ -20,7 +20,7 @@ public class UserDAO extends BaseDAO<User, Long> {
     }
 
     public User findByUsername(String username) {
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             return em.createQuery("select u from Users u where u.username = :username", User.class)
                     .setParameter("username", username)
                     .getSingleResult();
@@ -51,7 +51,7 @@ public class UserDAO extends BaseDAO<User, Long> {
     @Override
     public boolean deleteById(Long aLong) {
         boolean deleted;
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             deleted = em.createQuery("delete from Users where id = :id")
                     .setParameter("id", aLong)
@@ -60,7 +60,8 @@ public class UserDAO extends BaseDAO<User, Long> {
         }
         return deleted;
     }
-    public  List<User> usersList(Long adminId) {
+
+    public List<User> usersList(Long adminId) {
         // todo check page and size
         List<User> users = new UserDAO().getPage(adminId);
         return users;
@@ -82,7 +83,7 @@ public class UserDAO extends BaseDAO<User, Long> {
     @Override
     public boolean changeDeleted(Long aLong, Boolean deleted) {
         int i;
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             i = em.createQuery("update Users set deleted = :deleted where id = :id")
                     .setParameter("deleted", true)
@@ -96,7 +97,7 @@ public class UserDAO extends BaseDAO<User, Long> {
     @Override
     public List<User> findAll() {
         List<User> users;
-        try (EntityManager em = emf.createEntityManager()){
+        try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             users = em.createQuery("select u from Users u", User.class)
                     .getResultList();

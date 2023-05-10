@@ -15,7 +15,7 @@ public class AdminService {
         return service;
     }
 
-    public  List<User> usersList(Long adminId) {
+    public List<User> usersList(Long adminId) {
         List<User> users = UserDAO.getInstance().getPage(adminId);
         return users;
     }

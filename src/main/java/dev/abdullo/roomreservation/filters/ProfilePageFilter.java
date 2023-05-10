@@ -26,25 +26,25 @@ public class ProfilePageFilter implements Filter {
             Map<String, String> errors = new HashMap<>();
             if (username == null || username.isBlank() || username.isEmpty()) {
                 errors.put("username_error", "Username can not be blank");
-            }else if (username.length() < 2) {
+            } else if (username.length() < 2) {
                 errors.put("username_error", "Username must be at least 2 characters long");
-            }else if (username.length() > 15) {
+            } else if (username.length() > 15) {
                 errors.put("username_error", "Username must be less than 15 characters long");
-            }else if (username.contains(" ")) {
+            } else if (username.contains(" ")) {
                 errors.put("username_error", "Username can not contain spaces");
             }
 
             if (firstname == null || firstname.isBlank() || firstname.isEmpty()) {
                 errors.put("firstname_err", "Firstname can not be blank");
-            }else if (firstname.length() < 2) {
+            } else if (firstname.length() < 2) {
                 errors.put("firstname_err", "Firstname must be at least 2 characters long");
-            }else if (firstname.length() > 15) {
+            } else if (firstname.length() > 15) {
                 errors.put("firstname_err", "Firstname must be less than 15 characters long");
-            }else if (!firstname.matches("[a-zA-Z]+")) {
+            } else if (!firstname.matches("[a-zA-Z]+")) {
                 errors.put("firstname_err", "Firstname must contain only letters");
-            }else if (firstname.contains(" ")) {
+            } else if (firstname.contains(" ")) {
                 errors.put("firstname_err", "Firstname can not contain spaces");
-            }else if (firstname.matches("[0-9]+")) {
+            } else if (firstname.matches("[0-9]+")) {
                 errors.put("firstname_err", "Firstname can not contain numbers");
             }
 
@@ -56,21 +56,21 @@ public class ProfilePageFilter implements Filter {
                 errors.put("lastname_err", "Lastname must be less than 15 characters long");
             } else if (!lastname.matches("[a-zA-Z]+")) {
                 errors.put("lastname_err", "Lastname must contain only letters");
-            }else if (lastname.contains(" ")) {
+            } else if (lastname.contains(" ")) {
                 errors.put("lastname_err", "Lastname can not contain spaces");
-            }else if (lastname.matches("[0-9]+")) {
+            } else if (lastname.matches("[0-9]+")) {
                 errors.put("lastname_err", "Lastname can not contain numbers");
             }
 
             if (email == null || email.isBlank() || email.isEmpty()) {
                 errors.put("email_error", "Email can not be blank");
-            }else if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            } else if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
                 errors.put("email_error", "Email is not valid");
-            }else if (email.contains(" ")) {
+            } else if (email.contains(" ")) {
                 errors.put("email_error", "Email can not contain spaces");
-            }else if (email.length() < 5) {
+            } else if (email.length() < 5) {
                 errors.put("email_error", "Email must be at least 5 characters long");
-            }else if (email.length() > 30) {
+            } else if (email.length() > 30) {
                 errors.put("email_error", "Email must be less than 30 characters long");
             }
 

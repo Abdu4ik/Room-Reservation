@@ -1,10 +1,9 @@
 package dev.abdullo.roomreservation.listener;
 
 import dev.abdullo.roomreservation.dao.ReservationDAO;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.HttpSessionAttributeListener;
-import jakarta.servlet.http.HttpSessionListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 

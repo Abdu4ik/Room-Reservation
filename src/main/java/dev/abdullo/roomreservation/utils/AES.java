@@ -16,6 +16,7 @@ public class AES {
     private static final String SECRET_KEY = "strongpassword";
     private static final String SALT_VALUE = "verystrongpassword";
     private static final byte[] iv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
     public static String encrypt(String strToEncrypt) {
         try {
             IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -32,6 +33,7 @@ public class AES {
             throw new RuntimeException(e);
         }
     }
+
     public static String decrypt(String strToDecrypt) {
         try {
             IvParameterSpec ivspec = new IvParameterSpec(iv);

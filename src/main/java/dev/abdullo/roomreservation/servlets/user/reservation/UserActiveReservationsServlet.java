@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
 
 @WebServlet(name = "UserActiveReservationsServlet", value = "/user/active")

@@ -2,7 +2,6 @@ package dev.abdullo.roomreservation.services;
 
 import dev.abdullo.roomreservation.dao.FieldDAO;
 import dev.abdullo.roomreservation.dao.UserDAO;
-import dev.abdullo.roomreservation.domains.Field;
 import dev.abdullo.roomreservation.domains.User;
 import dev.abdullo.roomreservation.enums.Roles;
 import dev.abdullo.roomreservation.utils.Encrypt;
@@ -85,30 +84,29 @@ public class UserService {
     }
 
 
-    public User findById(Long id){
+    public User findById(Long id) {
         User user = null;
-        try{
+        try {
             user = UserDAO.getInstance().findById(id);
-        }catch ( Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return user;
     }
 
 
-
-    public User findByUsername(String username){
+    public User findByUsername(String username) {
         User user = null;
-        try{
+        try {
             user = UserDAO.getInstance().findByUsername(username);
-        }catch ( Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return user;
     }
 
 
-    public boolean update( User user ) {
+    public boolean update(User user) {
         return UserDAO.getInstance().update(user);
     }
 

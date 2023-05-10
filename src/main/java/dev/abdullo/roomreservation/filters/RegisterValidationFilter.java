@@ -32,7 +32,7 @@ public class RegisterValidationFilter implements Filter {
                 errors.put("username_error", "Username already taken!");
             }
 
-            if(fieldId == null || !fieldId.matches("[0-9]+") || !FieldService.getInstance().doesExist(fieldId)){
+            if (fieldId == null || !fieldId.matches("[0-9]+") || !FieldService.getInstance().doesExist(fieldId)) {
                 errors.put("field_error", "Wrong Field!");
             }
 

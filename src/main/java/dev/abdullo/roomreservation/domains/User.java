@@ -11,13 +11,13 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
-@Entity( name = "Users" )
-@Table( name = "users" )
+@Entity(name = "Users")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class User implements BaseEntity{
+public class User implements BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,7 +1,10 @@
 package dev.abdullo.roomreservation.domains;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
@@ -20,11 +23,11 @@ public class Reservation implements BaseEntity {
     private Integer seatNumber;
     @Column(nullable = false, name = "reservation_date")
     private LocalDate reservationDate;
-    @JoinColumn( nullable = false )
-    @ManyToOne( cascade = CascadeType.MERGE, fetch = FetchType.EAGER )
+    @JoinColumn(nullable = false)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private User user;
-    @JoinColumn( nullable = false )
-    @ManyToOne( cascade = CascadeType.MERGE, fetch = FetchType.EAGER )
+    @JoinColumn(nullable = false)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Room room;
     @CreationTimestamp
     @Column(nullable = false, columnDefinition = "timestamp default current_timestamp", name = "created_at")
